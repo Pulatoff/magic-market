@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magic Market</title>
+</head>
+<body>
+    <form action="">
+        <input class="name" type="text" placeholder="name">
+        <!-- <input type="text" placeholder="price"> -->
+        <!-- <input type="text" placeholder="countSold"> -->
+        <input class="descrip" type="text" placeholder="description">
+        <!-- <input type="text" placeholder="category"> -->
+        <input class="img" type="text" placeholder="img">
+        <!-- <input type="text" placeholder="rate"> -->
+        <!-- <input type="text" placeholder="ownProduct"> -->
+        <button>submit</button>
+    </form>
+    <script>
+        const form = document.querySelector('form');
+        const inpName = document.querySelector('.name');
+        const inpDescrip = document.querySelector('.descrip');
+        const inpImg = document.querySelector('.img');
+        let id = 0;
+        let data = [];
+        form.addEventListener('submit',(e)=>{
+            e.preventDefault()
+            
+            let price = Math.floor(Math.random()*5000)
+            let countSold = Math.floor(Math.random()*10000)
+            let rate = Math.floor(Math.random()*5)
+            let category = ['texnika','mebel','gullar','oquv qurolari','ichimliklar','oyichoqlar','kiyimlar']
+            let categoryNumber = Math.round(Math.random()*6)
+            const product = new Product(inpName.value,id,inpImg.value,price,inpDescrip.value,countSold,category[categoryNumber],rate)
+            data.push(product)
+            const json = JSON.stringify(data)
+           
+            id++;
+            inpName.value= inpDescrip.value = inpImg.value  = '';
+        })
+        
+        class Product{
+    constructor(name,id,image,price,descrition,countSold,category,rate,ownProduct){
+        this.id = id;
+        this.nameProduct = name;
+        this.image = image;
+        this.price = price;
+        this.descrition = descrition;
+        this.countSold = countSold;
+        this.category = category;
+        this.rate= rate;
+        this.ownProduct = false;
+    }
+}
+    </script>
+</body>
+</html>
+

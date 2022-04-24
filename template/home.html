@@ -1,12 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Magic Market</title>
+        <style>
+            header{
+                color: #E6EBE0;
+            }
+            h1,h2,h3,h4,h5,h6,li,ul,p,a{
+                margin: 0;
+                color: inherit;
+            }
+            a{
+                text-decoration: none;
+            }
+            li ul{
+                list-style:none;
+                padding: 0;
+            }
+            body{
+                box-sizing: border-box;
+                margin: 0;
+                background-color: #eae4e9;
+            }
+            .header{
+                box-sizing: inherit;
+                background-color: #9BC1BC;
+                width: 100%;
+                padding: 30px 50px;
+                justify-content: space-between; 
+                box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.46);
+            }
+            .navbar,.header,.navbar__list,.autarizate{
+                display: flex;
+                align-items: center;
+            }
+            .autarizate,.navbar__list{
+                gap: 30px;
+            }
+            .search__input{
+                width: 300px;
+                height: 30px;
+                border-radius: 10px;
+                border: none;
+                padding: 10px;
+
+            }
+            .navbar__list,.autarizate{
+                font-size: 18px;
+
+            }
+            .navbar__list ul:hover,.autarizate p:hover{
+                /* font-size: 18px; */
+                color:#ED6A5A;
+                transition: color 0.3s;
+            }
+            .navbar__list ul{
+                cursor: pointer;
+            }
+            .container{
+                margin: 0 auto;
+                width: 85%;
+            }
+            .market__cards{
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 50px;
+            }
+            .white__spacing{
+                height: 64px;
+            }
+            .card{
+                background-color: rgb(205, 202, 202);
+                border-radius: 5px;
+                overflow: hidden;
+                box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.401);
+            }
+            .product__img{
+                /* border-radius: 5px 5px 0 0; */
+                width: 100%;
+                height: 250px;
+                object-fit: cover;
+
+            }
+            .card__descrip{
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+            .product__sold{
+                color: #ED6A5A;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <header class="header">
+            <nav class="navbar">
+                <li class="navbar__list">
+                    <ul>Home</ul>
+                    <ul>Categories</ul>
+                    <ul>Saved items</ul>
+                    <ul>Best Sellers</ul>
+                    <ul>About</ul>
+                    <ul>My items</ul>
+                </li>
+            </nav>
+
+            <input class="search__input" type="search" placeholder="search items">
+
+            <div class="autarizate">
+                <a href="/login"><p>Login</p></a>
+                <a href="/sign-in"><p>Sign in</p></a>
+            </div>
+        </header>
+
+        <div class="white__spacing"></div>
+
+        <main>
+            <div class="container">
+                <div class="market__cards">
+                    
+                    <div class="card">
+                        <img class="product__img" src="https://picsum.photos/seed/picsum/300/300" alt="">
+                        <div class="card__descrip">
+                            <h2 class="product__name">Apple</h2>
+                            <p class="product__price">Price: 200$</p>
+                            <p class="product__category">Category: window</p>
+                            <p class="product__sold">299 sold</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </main>
+
+    </body>
+
 </html>
